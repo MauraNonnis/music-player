@@ -29,25 +29,25 @@ let All_song = [
    {
      name: "Concert no. 21",
      path: "music/Andante.mp3",
-     img: "img/mozart.jpg",
+     img: "pics/mozart.jpg",
      singer: "W.A. Mozart"
    },
    {
      name: "Spring",
      path: "music/Spring.mp3",
-     img: "img/vivaldi.jpg",
+     img: "pics/vivaldi.jpg",
      singer: "Antonio Vivaldi"
    },
    {
      name: "Concert no. 3",
      path: "music/Concerto-no-3.mp3",
-     img: "img/bach.jpg",
+     img: "pics/bach.jpg",
      singer: "Sebastian Bach"
    },
    {
      name: "Symphony no. 40",
      path: "music/Symphony no. 40.mp3",
-     img: "img/mozart.jpg",
+     img: "pics/mozart.jpg",
      singer: "W.A. Mozart"
    }
 ];
