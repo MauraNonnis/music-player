@@ -15,7 +15,7 @@ let track = document.createElement('audio');
 
 let allSongs = [
    {
-     name: "Concerto no. 21",
+     name: "Concert no. 21",
      path: "music/Andante.mp3",
      img: "pics/mozart.jpg",
      singer: "W.A. Mozart"
@@ -27,7 +27,7 @@ let allSongs = [
      singer: "Antonio Vivaldi"
    },
    {
-     name: "Concerto no. 3",
+     name: "Concert no. 3",
      path: "music/Concerto-no-3.mp3",
      img: "pics/bach.jpg",
      singer: "Sebastian Bach"
