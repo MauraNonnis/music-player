@@ -1,0 +1,100 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    font-size: 1.3em;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+input,
+h4 {
+    margin-bottom: 1em;
+}
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+    height: 1px;
+}
+
+
+input[type=range]:focus {
+    outline: none;
+    background-color: teal;
+  
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background: teal;
+    cursor: pointer;
+}
+  
+
+button {
+    padding: 1em;
+    border: none;
+    border-radius: 30%;
+    background-color: inherit;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+button:hover{
+    background-color: teal;
+}
+
+
+
+.main{
+    height: 450px;
+    width: 350px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1px 2px 15px teal;
+   
+}
+
+.fas {
+    font-size: 25px;
+    color: #fff;
+}
+
+.title {
+	margin-top: .6em;
+	
+}
+
+
+.artist {
+    text-transform: uppercase;
+    font-size: 1rem;
+	margin-bottom: 1em;
+    font-weight: 400;
+}
+
+.image_div {
+	width: 200px;
+	background-size: cover;
+}
+
+.album_cover {
+	width: 100%;
+}
+
