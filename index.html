@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
 
 <body>
-   <div class="main">
-      <div class="container">
+   <div class="main" id="main-div">
+      
+      <div class="container" >
+         
          <div class="image_div">
             <img id="track_image" alt="Cover image" class="album_cover">
          </div>
@@ -17,14 +19,18 @@
          <h2 id="title" class="title">title.mp3</h2>
          <p id="artist" class="artist">Artist name</p>
   	 	   <div class="middle">
-  	         <button onclick="previous_song()" id="pre" class="previous"><i class="fas fa-backward"></i></i></button>
-      	   <button onclick="justplay()" id="play" class="play"><i class="fas fa-play"></i></button>
-  	         <button onclick="next_song()" id="next" class="next"><i class="fas fa-forward"></i></button>
+  	         <button onclick="previous_song()" id="pre" class="previous"><i class="fas fa-backward" id="backwardBtn"></i></i></button>
+      	   <button onclick="justplay()" id="play" class="play"><i class="fas fa-play" id="playBtn"></i></button>
+  	         <button onclick="next_song()" id="next" class="next"><i class="fas fa-forward" id="fwdBtn"></i></button>
   	      </div>
          <div class="duration">
             <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
          </div>
+         <div class="light-container">
+            <i class="fas fa-lightbulb" id="bulb"></i>
+         </div>
       </div>
+      
 
   <script src="script.js"></script>
 
