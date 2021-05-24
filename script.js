@@ -3,45 +3,39 @@ let play = document.querySelector('#play');
 let next = document.querySelector('#next');
 let title = document.querySelector('#title');
 let slider = document.querySelector('#duration_slider');
-let show_duration = document.querySelector('#show_duration');
 let track_image = document.querySelector('#track_image');
 let artist = document.querySelector('#artist');
 let image = document.getElementById("track_image")
-
-
 let timer;
 let autoplay = 0;
-
 let index_no = 0;
-let Playing_song = false;
-
-//create a audio Element
+let playingSong = false;
 let track = document.createElement('audio');
 
 
-let All_song = [
+let allSongs = [
    {
      name: "Concerto no. 21",
      path: "music/Andante.mp3",
-     img: "img/mozart.jpg",
+     img: "images/mozart.jpg",
      singer: "W.A. Mozart"
    },
    {
      name: "Spring",
      path: "music/Spring.mp3",
-     img: "img/vivaldi.jpg",
+     img: "images/vivaldi.jpg",
      singer: "Antonio Vivaldi"
    },
    {
      name: "Concerto no. 3",
      path: "music/Concerto-no-3.mp3",
-     img: "img/bach.jpg",
+     img: "images/bach.jpg",
      singer: "Sebastian Bach"
    },
    {
      name: "Symphony no. 40",
      path: "music/Symphony no. 40.mp3",
-     img: "img/mozart.jpg",
+     img: "images/mozart.jpg",
      singer: "W.A. Mozart"
    }
 ];
@@ -52,13 +46,11 @@ let All_song = [
 function load_track(index_no){
 	clearInterval(timer);
 	reset_slider();
-
-	track.src = All_song[index_no].path;
-	title.innerHTML = All_song[index_no].name;	
-	track_image.src = All_song[index_no].img;
-    artist.innerHTML = All_song[index_no].singer;
-    track.load();
-
+	track.src = allSongs[index_no].path;
+	title.innerHTML = allSongs[index_no].name;	
+	track_image.src = allSongs[index_no].img;
+    	artist.innerHTML = allSongs[index_no].singer;
+    	track.load();
 	timer = setInterval(range_slider ,1000);
 	
 }
@@ -66,7 +58,7 @@ function load_track(index_no){
 load_track(index_no);
 
 function justplay(){
- 	if(Playing_song==false){
+ 	if(playingSong==false){
  		playsong();
 
  	}else{
@@ -81,19 +73,19 @@ function reset_slider(){
 
 function playsong(){
   track.play();
-  Playing_song = true;
+  playingSong = true;
   play.innerHTML = '<i class="fas fa-pause"></i>';
 }
 
 
 function pausesong(){
 	track.pause();
-	Playing_song = false;
+	playingSong = false;
 	play.innerHTML = '<i class="fas fa-play"></i>';
 }
 
 function next_song(){
-	if(index_no < All_song.length - 1){
+	if(index_no < allSongs.length - 1){
 		index_no += 1;
 		load_track(index_no);
 		playsong();
@@ -112,7 +104,7 @@ function previous_song(){
 		playsong();
 
 	}else{
-		index_no = All_song.length;
+		index_no = allSongs.length;
 		load_track(index_no);
 		playsong();
 	}
@@ -126,21 +118,16 @@ function change_duration(){
 
 function range_slider(){
 	let position = 0;
-        
-        // update slider position
-		if(!isNaN(track.duration)){
-		   position = track.currentTime * (100 / track.duration);
-		   slider.value =  position;
-	      }
-
-       
-       // function will run when the song is over
+	if(!isNaN(track.duration)){
+		position = track.currentTime * (100 / track.duration);
+		slider.value =  position;
+	}
        if(track.ended){
        	 play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
            if(autoplay==1){
 		       index_no += 1;
 		       load_track(index_no);
 		       playsong();
-           }
-	    }
-     }
+       		}
+       }
+}
